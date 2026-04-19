@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* خلفية متحركة */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: bg 10s ease infinite;
+}
+
+/* النص المتحرك والبارز */
+.moving-text {
+    position: absolute;
+    font-size: 80px;
+    color: white;
+    white-space: nowrap;
+    text-shadow: 0 4px 13px rgba(0, 0, 0, 0.5);
+
+    animation: move 8s linear infinite;
+}
+
+/* زر الدخول الضخم */
+.enter-btn {
+    margin-top: 200px;
+    padding: 20px 50px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border: 5px solid white;
+    border-radius: 50px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.enter-btn:hover {
+    transform: scale(1.1);
+    background: white;
+    color: #e73c7e;
+}
+
+/* تعريف الحركات */
+@keyframes bg {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes move {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
